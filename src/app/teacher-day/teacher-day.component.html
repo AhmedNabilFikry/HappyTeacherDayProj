@@ -1,0 +1,21 @@
+
+   <div class="container">
+    <h1 *ngIf="!isSubmitted">{{ headline }}</h1>
+  
+    <!-- Input field for the teacher's name -->
+    <input
+      *ngIf="!isSubmitted"
+      type="text"
+      [(ngModel)]="teacherName"
+      placeholder="أدخل الاسم"
+    />
+    <button *ngIf="!isSubmitted" (click)="submitTeacherName()">تأكيد</button>
+  
+    <!-- Message that appears after entering the teacher's name -->
+    <div *ngIf="isSubmitted"  class="teacher-message">{{ teacherMessage }}</div>
+  
+    <!-- Image to show after submission -->
+    <img *ngIf="isSubmitted" class="image" src="assets/teacherDay.jpg" alt="Celebrating Teacher Day" />
+  </div>
+  
+  
